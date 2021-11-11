@@ -45,7 +45,12 @@
     <%= f.label :suburb %><br />
     <%= f.text_field :suburb, autofocus: true %>
   </div>
-  <br>
+
+  <div class="feild">
+    <%= f.label :postal_code %><br />
+    <%= f.number_field :postal_code, autofocus: true, max: 9999 %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
