@@ -3,6 +3,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="feild">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="feild">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,6 +31,21 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="feild">
+    <%= f.label :phone_number %><br />
+    <%= f.telephone_field :phone_number, autofocus: true %>
+  </div>
+
+  <div class="feild">
+    <%= f.label :unit_address %><br />
+    <%= f.text_field :unit_address, autofocus: true %>
+  </div>
+
+  <div class="feild">
+    <%= f.label :suburb %><br />
+    <%= f.text_field :suburb, autofocus: true %>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
