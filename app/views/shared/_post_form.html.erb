@@ -1,23 +1,23 @@
 <%= form_with model: @post do |form| %>
     <div class="field">
-        <%= form.label :listing_title %>
+        <%= form.label :listing_title %>:
         <%= form.text_field :listing_title %>
-    </div>
+    </div><br>
 
     <div class="field">
-        <%= form.label :console %>
+        <%= form.label :console %>:
         <%= form.collection_check_boxes :console_ids, Console.all, :id, :name %>
-    </div>
+    </div><br>
 
     <div class="field">
-        <%= form.label :description %>
-        <%= form.text_field :descriptions %>
-    </div>
+        <%= form.label :description %>:<br>
+        <%= form.text_area :descriptions, size: "70x5" %>
+    </div><br>
 
     <div class="field">
-        <%= form.label :price %>
+        <%= form.label :price %>:
         <%= form.number_field :price %>
-    </div>
+    </div><br>
 
     <div class="action">
         <%= form.submit %>
