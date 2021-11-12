@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Console.create( id: 1, console_type: 'PS4/PS5')
+Console.create( id: 2, console_type: 'XboxOne')
+Console.create( id: 3, console_type: 'Nintendo Switch')
+Console.create( id: 4, console_type: 'PC')
