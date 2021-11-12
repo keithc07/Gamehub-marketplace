@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :timeoutable
   validates :first_name, :last_name, :phone_number, :unit_address, :suburb, :postal_code, :state, presence: true
   has_many :posts
+  has_many :buys
 end

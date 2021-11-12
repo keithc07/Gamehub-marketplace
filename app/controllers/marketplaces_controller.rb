@@ -1,4 +1,6 @@
 class MarketplacesController < ApplicationController
+
+
     def index
         @posts = Post.all
     end
@@ -8,5 +10,24 @@ class MarketplacesController < ApplicationController
     end
     
     def new
+        @post = Post.new
+    end
+
+    def create
+        @post = Post.new permitted_params
+            if @post.save
+                redirect_to @post
+            else
+                render :new
+            end
+        end
+    end
+
+private
+
+    def permitted_params
+        params.required(:post).permit(
+            :listing_title, :console_ids: [], :description, :price
+        ) 
     end
 end

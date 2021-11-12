@@ -1,0 +1,27 @@
+<%= form_with model: @post do |form| %>
+    <div class="field">
+        <%= form.label :listing_title %>
+        <%= form.text_field :listing_title %>
+    </div>
+
+    <div class="field">
+        <%= form.label :console %>
+        <%= form.collection_check_boxes :console_ids, console.all, :name %>
+    </div>
+
+    <div class="field">
+        <%= form.label :description %>
+        <%= form.text_field :descriptions %>
+        <% end %>
+    </div>
+
+    <div class="field">
+        <%= form.label :price %>
+        <%= form.number_field :price %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
+
