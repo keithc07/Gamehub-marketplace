@@ -50,6 +50,11 @@
     <%= f.label :postal_code %><br />
     <%= f.number_field :postal_code, autofocus: true, max: 9999 %>
   </div>
+
+  <div class="feild">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autofocus: true, maxlength: 3 %>
+  </div>
   
   <div class="actions">
     <%= f.submit "Sign up" %>

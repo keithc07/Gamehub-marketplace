@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  post: one
+  buy_date: MyString
+  date: MyString
+
+two:
+  post: two
+  buy_date: MyString
+  date: MyString
