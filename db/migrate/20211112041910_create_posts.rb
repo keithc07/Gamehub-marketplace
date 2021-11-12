@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.references :user, null: false, foreign_key: true
       t.text :listing_title
       t.references :console, null: false, foreign_key: true
-      t.string :description
+      t.text :description
       t.integer :price
 
       t.timestamps

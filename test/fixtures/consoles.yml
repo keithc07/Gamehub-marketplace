@@ -2,8 +2,6 @@
 
 one:
   console_type: MyString
-  string: MyString
 
 two:
   console_type: MyString
-  string: MyString

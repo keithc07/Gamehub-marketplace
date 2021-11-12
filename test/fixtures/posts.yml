@@ -4,14 +4,12 @@ one:
   user: one
   listing_title: MyText
   console: one
-  description: MyString
+  description: MyText
   price: 1
-  image: 
 
 two:
   user: two
   listing_title: MyText
   console: two
-  description: MyString
+  description: MyText
   price: 1
-  image: 
