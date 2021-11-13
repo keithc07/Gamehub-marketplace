@@ -2,10 +2,10 @@
 
 one:
   user: one
-  post: one
-  buy_date: 2021-11-12
+  listing: one
+  buy_date: 2021-11-13
 
 two:
   user: two
-  post: two
-  buy_date: 2021-11-12
+  listing: two
+  buy_date: 2021-11-13

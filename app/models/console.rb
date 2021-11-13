@@ -1,3 +1,3 @@
 class Console < ApplicationRecord
-    has_many :posts
+    has_many :listings
 end

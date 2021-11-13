@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :listings
 
   devise_for :users
   
-  root to: 'posts#index'
+  root to: 'listings#index'
 end
