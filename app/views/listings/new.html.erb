@@ -1,3 +1,4 @@
 <h1>Create a New Listing </h1>
 
-<%= render 'shared/listing_form' %>
+<%# Assign the variables here so it can understand the variables in the form %>
+<%= render "shared/listing_form", listing: @listing %>

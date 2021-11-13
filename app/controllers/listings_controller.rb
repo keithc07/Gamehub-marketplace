@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
     before_action :authenticate_user!, only: %i[new create]
+    before_action :set_listing, only: %i[show edit update destroy]
     
     def index
         @listings = Listing.all
@@ -16,9 +17,20 @@ class ListingsController < ApplicationController
     def create
         @listing = current_user.listings.new(permitted_params)
         if @listing.save
-            redirect_to listings_path
+            redirect_to @listing
         else
             render :new
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @listing.update(permitted_params)
+            redirect_to @listing
+        else
+            render :edit
         end
     end
 
@@ -29,7 +41,7 @@ private
     end
 
     def set_listing
-        id = params[:id]
-        @listing = Listing.find(id)
+        @listing = Listing.find(params[:id])
     end
+
 end

@@ -1,4 +1,4 @@
-<%= form_with model: @listing do |form| %>
+<%= form_with model: listing do |form| %>
 
     <div class="field">
         <%= form.label :listing_title %>:
@@ -21,7 +21,7 @@
     </div><br>
 
     <div class="actions"> 
-        <%= form.submit "Create a new listing" %>
+        <%= form.submit %>
     </div>
 
 <% end %>
