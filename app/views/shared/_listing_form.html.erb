@@ -1,28 +1,28 @@
 <%= form_with model: @listing do |form| %>
-    <div>
+
+    <div class="field">
         <%= form.label :listing_title %>:
         <%= form.text_field :listing_title %>
     </div><br>
 
-    <div>
-        <%= form_for @listing do |f| %>
-            <%= form.label :console_id %>:
-            <%= form.select(:console_id, @console.map { |c| [ c.console_type]})%>
-        <% end %>
+    <div class="field">
+        <%= form.label :console_id %>:
+        <%= form.collection_select :console_id, Console.all, :id, :console_type %>
     </div><br>
 
-    <div>
+    <div class="field">
         <%= form.label :description %>:<br>
         <%= form.text_area :description, size: "70x5" %>
     </div><br>
 
-    <div>
+    <div class="field">
         <%= form.label :price %>:
         <%= form.number_field :price, min: 0, max: 1000 %>
     </div><br>
 
-    <div>
-        <%= form.submit %>
+    <div class="actions"> 
+        <%= form.submit "Create a new listing" %>
     </div>
+
 <% end %>
 
