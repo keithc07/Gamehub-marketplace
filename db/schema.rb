@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_012728) do
+ActiveRecord::Schema.define(version: 2021_11_13_013226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buys", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
+    t.date "buy_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_buys_on_listing_id"
+    t.index ["user_id"], name: "index_buys_on_user_id"
+  end
 
   create_table "consoles", force: :cascade do |t|
     t.string "console_type"
@@ -52,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_11_13_012728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buys", "listings"
+  add_foreign_key "buys", "users"
   add_foreign_key "listings", "consoles"
   add_foreign_key "listings", "users"
 end
