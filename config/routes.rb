@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :marketplaces
+  resources :posts
 
   devise_for :users
-
-  get 'marketplaces/new', to: "marketplaces#new", as: "posts"
   
-  root to: 'marketplaces#index'
+  root to: 'posts#index'
 end
