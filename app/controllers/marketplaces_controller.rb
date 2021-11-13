@@ -17,7 +17,7 @@ class MarketplacesController < ApplicationController
     def create
         @post = Post.new permitted_params
         if @post.save
-            redirect_to @post
+            redirect_to index
         else
             render :new
         end
@@ -26,6 +26,6 @@ class MarketplacesController < ApplicationController
 private
 
     def permitted_params
-        params.required(:post).permit(:listing_title, :description, :price, console_ids: []) 
+        params.required(:post).permit(:listing_title, :description, :price) 
     end
 end

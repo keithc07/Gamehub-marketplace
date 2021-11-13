@@ -5,18 +5,20 @@
     </div><br>
 
     <div class="field">
-        <%= form.label :console %>:
-        <%= form.collection_check_boxes :console_ids, Console.all, :id, :name %>
+        <%= form_for @post do |f| %>
+            <%= form.label :console %>:
+            <%= f.select :console_id, Console.all.collect { |p| [ p.console_type] }%>
+        <% end %>
     </div><br>
 
     <div class="field">
         <%= form.label :description %>:<br>
-        <%= form.text_area :descriptions, size: "70x5" %>
+        <%= form.text_area :description, size: "70x5" %>
     </div><br>
 
     <div class="field">
         <%= form.label :price %>:
-        <%= form.number_field :price %>
+        <%= form.number_field :price, min: 0, max: 1000 %>
     </div><br>
 
     <div class="action">
