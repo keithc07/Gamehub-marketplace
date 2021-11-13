@@ -34,6 +34,10 @@ class ListingsController < ApplicationController
         end
     end
 
+    def buy
+
+    end
+
 private
 
     def permitted_params
