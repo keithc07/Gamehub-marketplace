@@ -1,17 +1,29 @@
 <h1>Listing Detail</h1>
 
 <div>
-    <strong><%= @listing.listing_title %></strong>
+    <h4><u><%= @listing.listing_title %></u></h4>
+</div>
+
+<div>
+    Console Type: <strong><%= @listing.console.console_type %></strong>
 </div><br>
 
 <div>
-    <strong>Console Type: <%= @listing.console.console_type %></strong>
-</div><br>
-
-<div>
-    <strong><%= @listing.description %></strong>
+    <%= @listing.description %>
 </div><br>
 
 <div>
     <strong>$<%= @listing.price %></strong>
+</div><br>
+
+<div>
+    <%= @listing.user.first_name%> <%= @listing.user.last_name%>
+</div><br>
+
+<div>
+    <%= @listing.user.suburb%>, <%= @listing.user.state%>
+</div><br>
+
+<div>
+    <%= @listing.created_at.strftime("%B %d, %Y") %>
 </div>
