@@ -1,7 +1,8 @@
 <h1>Game Advertisement List</h1>
 
-<section>
+<main>
     <% @listings.each do |l| %>
+    <section class="border">
         <p>
             <h4><u><%= link_to "#{l.listing_title}", l %></u></h4>
             Console Type: <strong><%= l.console.console_type %></strong>
@@ -21,8 +22,9 @@
         <p>
             <%= l.updated_at.strftime("%B %d, %Y") %>
         </p>
+    </section>
     <% end %>
-</section>
+</main>
 
 
 <%= button_to 'Buy', button_path, method: :get %>
