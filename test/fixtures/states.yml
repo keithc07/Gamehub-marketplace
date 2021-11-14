@@ -1,11 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  listing: one
-  buy_date: 2021-11-13
+  state_name: MyString
 
 two:
-  user: two
-  listing: two
-  buy_date: 2021-11-13
+  state_name: MyString

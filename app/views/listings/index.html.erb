@@ -17,7 +17,7 @@
             <%= l.user.first_name%> <%= l.user.last_name%>
         </p>
         <p>
-            <%= l.user.suburb%>, <%= l.user.state%>
+            <%= l.user.suburb%>, <%= l.user.state.state_name%>
         </p>
         <p>
             <%= l.updated_at.strftime("%B %d, %Y") %>
@@ -25,6 +25,3 @@
     </section>
     <% end %>
 </main>
-
-
-<%= button_to 'Buy', button_path, method: :get %>

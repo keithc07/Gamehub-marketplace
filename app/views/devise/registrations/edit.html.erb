@@ -62,8 +62,8 @@
   </div>
 
   <div class="feild">
-    <%= f.label :state %>:<br />
-    <%= f.text_field :state, autofocus: true, maxlength: 3 %>
+    <%= f.label :state_id %>:<br />
+    <%= f.collection_select :state_id, State.all, :id, :state_name %>
   </div>
 
   <div class="actions">
