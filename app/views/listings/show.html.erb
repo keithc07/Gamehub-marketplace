@@ -1,4 +1,4 @@
-<h1>Listing Detail</h1>
+<h1>Listing Details with Seller Contact Info</h1>
 
 <div>
     <h4><u><%= @listing.listing_title %></u></h4>
@@ -13,17 +13,30 @@
 </div><br>
 
 <div>
-    <strong>$<%= @listing.price %></strong>
+    Price: <strong>$<%= @listing.price %></strong>
 </div><br>
 
 <div>
-    <%= @listing.user.first_name%> <%= @listing.user.last_name%>
+    Seller Name: <strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></strong>
 </div><br>
 
 <div>
-    <%= @listing.user.suburb%>, <%= @listing.user.state%>
+    Phone Number: <strong><%= @listing.user.phone_number%></strong>
 </div><br>
 
 <div>
-    <%= @listing.created_at.strftime("%B %d, %Y") %>
+    Suburb: <strong><%= @listing.user.suburb%></strong>
+</div><br>
+
+<div>
+    State: <strong><%= @listing.user.state%></strong>
+</div><br>
+
+<div>
+    Last Update: <%= @listing.updated_at.strftime("%B %d, %Y") %>
+</div><br>
+
+<div>
+    <%= link_to 'Edit', edit_listing_path(@listing) %>
+    <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' } %>
 </div>

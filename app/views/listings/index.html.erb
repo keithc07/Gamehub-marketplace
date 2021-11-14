@@ -1,5 +1,28 @@
-<h1>Home Page</h1>
+<h1>Game Advertisement List</h1>
 
+<section>
+    <% @listings.each do |l| %>
+        <p>
+            <h4><u><%= link_to "#{l.listing_title}", l %></u></h4>
+            Console Type: <strong><%= l.console.console_type %></strong>
+        </p>
+        <p>
+            <%= l.description %>
+        </p>
+        <p>
+            <strong>$<%= l.price %></strong>
+        </p>
+        <p>
+            <%= l.user.first_name%> <%= l.user.last_name%>
+        </p>
+        <p>
+            <%= l.user.suburb%>, <%= l.user.state%>
+        </p>
+        <p>
+            <%= l.updated_at.strftime("%B %d, %Y") %>
+        </p>
+    <% end %>
+</section>
 
 
 <%= button_to 'Buy', button_path, method: :get %>

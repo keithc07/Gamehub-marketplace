@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
 
-  validates :phone_number, numericality: { only_integer: true, message: "only allows integers"}, length: { is: 9, message: "require 9 digits" }, uniqueness: true, presence: true
+  validates :phone_number, numericality: { only_integer: true, message: "only allows integers"}, length: { is: 9, message: "require 9 digits" }, presence: true
   validates :first_name, :last_name, :suburb, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }, presence: true
   validates :unit_address, :postal_code, presence: true
 

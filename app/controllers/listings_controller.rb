@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-    before_action :authenticate_user!, only: %i[new create]
+    before_action :authenticate_user!, only: %i[new create show edit update destroy]
     before_action :set_listing, only: %i[show edit update destroy]
     
     def index
@@ -34,8 +34,9 @@ class ListingsController < ApplicationController
         end
     end
 
-    def buy
-
+    def destroy
+        @listing.destroy
+            redirect_to listings_path, notice: 'Listing was successfully deleted.'
     end
 
 private
