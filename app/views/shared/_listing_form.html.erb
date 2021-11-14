@@ -30,6 +30,11 @@
         <%= form.number_field :price, min: 0, max: 1000 %>
     </div><br>
 
+    <div class="field">
+        <%= form.label :picture %>:
+        <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
+    </div><br>
+
     <div class="actions"> 
         <%= form.submit %>
     </div>
