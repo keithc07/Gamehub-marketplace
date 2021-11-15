@@ -1,10 +1,10 @@
 <h1>Listing Details with Seller Contact Info</h1>
 
-<%= image_tag(@listing.picture) if @listing.picture.attached? %>
-
 <div>
     <h4><u><%= @listing.listing_title %></u></h4>
 </div>
+
+<%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %>
 
 <div>
     Console Type: <strong><%= @listing.console.console_type %></strong>

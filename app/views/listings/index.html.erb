@@ -3,11 +3,11 @@
 <main>
     <% @listings.each do |l| %>
     <section class="border">
-        <%= image_tag(l.picture) if l.picture.attached? %>
         <p>
             <h4><u><%= link_to "#{l.listing_title}", l %></u></h4>
             Console Type: <strong><%= l.console.console_type %></strong>
         </p>
+        <%= image_tag l.picture, class: "image" if l.picture.attached? %>
         <p>
             <%= l.description %>
         </p>
