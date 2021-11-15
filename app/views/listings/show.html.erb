@@ -4,7 +4,7 @@
     <h4><u><%= @listing.listing_title %></u></h4>
 </div>
 
-<%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %>
+<%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %><br>
 
 <div>
     Console Type: <strong><%= @listing.console.console_type %></strong>
@@ -24,6 +24,10 @@
 
 <div>
     Phone Number: <strong>+61 <%= @listing.user.phone_number%></strong>
+</div><br>
+
+<div>
+    Email: <strong><%= @listing.user.email%></strong>
 </div><br>
 
 <div>
