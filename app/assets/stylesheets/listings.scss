@@ -2,11 +2,148 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.border {
-    border: 5px solid black;
+// background-image
+.background {
+    background-image: url("background.jpg");
+    width: 100%;
+    height: 100%;
 }
 
+// flexbox to adjust content position and alignment with background color
+.index-outer-box {
+    border: 2px solid black;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+}
+
+// flexbox to adjust content position and alignment
+.index-inner-box1 {
+    display: flex
+}
+
+// flexbox to adjust content position and alignment
+.index-inner-box2 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 3px;
+}
+
+// adjust text position and alignment
+.index-inner-box2 > h4 {
+    margin: 10px 5px;
+}
+
+// adjust text position and alignment
+.index-inner-box2 > p {
+    margin: 5px 5px;
+}
+
+// graphic component: remove underlines of hyperlink text and add color
+.index-inner-box2 a {
+    color: #700B97;
+}
+
+// graphic component: text color change with pseudo-class
+.index-inner-box2 a:hover {
+    color: #4E9F3D;
+}
+
+// flexbox to adjust content position and alignment
+.index-inner-box3 {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: auto;
+    margin: auto;
+}
+
+.new-form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin: 5px auto;
+}
+
+.show-form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+    border: 2px solid black;
+}
+
+.show-image-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+// fixed upload image size
 .image {
     width: 300px;
     height: 300px;
+}
+
+// flexbox to adjust content position and alignment
+.heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+// graphic component: remove underlines of hyperlink text and add color
+.heading a{
+    text-decoration: none;
+    color: #14279B;
+}
+
+// graphic component: text color change with pseudo-class
+.heading a:hover {
+    color: #FF0000;
+}
+
+// flexbox to adjust content position and alignment
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}   
+
+// adjust text position and alignment
+.navbar > span {
+    padding: 10px;
+}
+
+// flexbox to adjust content position and alignment
+.welcome {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+// graphic component: remove underlines of hyperlink text and add color
+.navbar a {
+    text-decoration: none;
+    color: #150050;
+}
+
+// graphic component: text color change with pseudo-class
+.navbar a:hover {
+    color: #FF0000;
+}
+
+// tweak the margin and font-size of the text in the partial _heading.html.erb
+section > h1 {
+    margin: 5px 0px;
+    font-size: 2rem;
 }

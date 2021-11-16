@@ -10,11 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/navbar" %>
-    <%= render "shared/heading" %>
-    <%= yield %>
+  <body class="background">
+      <p class="notice"><%= notice %></p> <%# devise notice %>
+      <p class="alert"><%= alert %></p> <%# devise alert %>
+      <%= render "shared/navbar" %> <%# render the partial file _navbar.html.erb from shared folders %>
+      <%= render "shared/heading" %> <%# render the partial file _heading.html.erb from shared folders %>
+      <%= yield %>
   </body>
 </html>

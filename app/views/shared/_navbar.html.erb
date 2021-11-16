@@ -1,11 +1,17 @@
-<nav>
-    
+<%# A welcome message that shows the user is logged in %>
+<p class="welcome">    
     <% if user_signed_in? %>
-        <span><%= "Welcome, #{current_user.first_name}!"%> </span>
-        <br>
+            <%= "Welcome, #{current_user.first_name}!"%> 
+    <% end %>
+</p>
+
+<%# A navbar with conditional statements. If the user is signed-in, the navbar will show Create, Edit Profile, 
+and Sign Out. If the user is not signed-in, the navbar will show Create, Register, and Sign In. %>
+<nav class="navbar">
+    <% if user_signed_in? %>
         <span><%= link_to "Create", new_listing_path %></span>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+        <span><%= link_to "Edit Profile", edit_user_registration_path %></span>
+        <span><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></span>
     <% else %>
         <span><%= link_to "Create", new_listing_path %></span>
         <span><%= link_to "Register", new_user_registration_path %></span>

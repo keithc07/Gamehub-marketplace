@@ -10,34 +10,36 @@
         </div>
     <% end %>
 
-    <div class="field">
-        <%= form.label :listing_title %>:
-        <%= form.text_field :listing_title %>
-    </div><br>
+    <section class="new-form">
+        <div>
+            <%= form.label :listing_title %>:
+            <%= form.text_field :listing_title %>
+        </div><br>
 
-    <div class="field">
-        <%= form.label :console_id %>:
-        <%= form.collection_select :console_id, Console.all, :id, :console_type %>
-    </div><br>
+        <div>
+            <%= form.label :console_id %>:
+            <%= form.collection_select :console_id, Console.all, :id, :console_type %>
+        </div><br>
 
-    <div class="field">
-        <%= form.label :description %>:<br>
-        <%= form.text_area :description, size: "70x5" %>
-    </div><br>
+        <div>
+            <%= form.label :description %>:<br>
+            <%= form.text_area :description, size: "70x10" %>
+        </div><br>
 
-    <div class="field">
-        <%= form.label :price %>:
-        <%= form.number_field :price, min: 0, max: 1000 %>
-    </div><br>
+        <div>
+            <%= form.label :price %>: $
+            <%= form.number_field :price, min: 0, max: 1000 %>
+        </div><br>
 
-    <div class="field">
-        <%= form.label :picture %>:
-        <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
-    </div><br>
+        <div>
+            <%= form.label :picture %>:
+            <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
+        </div><br>
 
-    <div class="actions"> 
-        <%= form.submit %>
-    </div>
+        <div> 
+            <%= form.submit %>
+        </div>
+    </section>
 
 <% end %>
 

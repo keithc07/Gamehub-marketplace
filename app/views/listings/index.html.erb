@@ -1,28 +1,48 @@
-<h1>Game Advertisement List</h1>
+<%# Ruby iterators returning the specific elements of seller listings %>
+<% @listings.each do |l| %>
+    <%# flexbox to manage the alignment and position of the inner flexbox%>
+    <main class="index-outer-box">
 
-<main>
-    <% @listings.each do |l| %>
-    <section class="border">
-        <p>
-            <h4><u><%= link_to "#{l.listing_title}", l %></u></h4>
-            Console Type: <strong><%= l.console.console_type %></strong>
-        </p>
-        <%= image_tag l.picture, class: "image" if l.picture.attached? %>
-        <p>
-            <%= l.description %>
-        </p>
-        <p>
-            <strong>$<%= l.price %></strong>
-        </p>
-        <p>
-            <%= l.user.first_name%> <%= l.user.last_name%>
-        </p>
-        <p>
-            <%= l.user.suburb%>, <%= l.user.state.state_name%>
-        </p>
-        <p>
-            <%= l.updated_at.strftime("%B %d, %Y") %>
-        </p>
-    </section>
-    <% end %>
-</main>
+        <%# flexbox contains image %>
+        <section class="index-inner-box1">
+            <%# using Ruby to check whether a picture is uploaded or not %>
+            <%= image_tag l.picture, class: "image" if l.picture.attached? %>
+        </section>
+
+        <%# flexbox contains listing title, console type, and description %>
+        <section class="index-inner-box2">
+            <%# using Ruby to bring up listing title created by users from database %>
+            <h4><%= link_to "#{l.listing_title}", l %></h4>
+            <%# using Ruby to bring up console type chosen by users from database %>
+            <p>
+                Console Type: <strong><u><%= l.console.console_type %></u></strong>
+            </p>
+            <%# using Ruby to bring up description created by users from database %>
+            <p>
+                <%= l.description %>
+            </p>
+        </section>
+
+        <%# flexbox contains seller's name, subrub, state, and listing time %>
+        <section class="index-inner-box3">
+            <%# using Ruby to bring up price set by users from database %>
+            <p>
+                Price: <strong><u>$<%= l.price %></u></strong>
+            </p>
+            <%# using Ruby to bring up user first and last name from database %>
+            <p>
+                <%= l.user.first_name%> <%= l.user.last_name%>
+            </p>
+            <%# using Ruby to bring up user suburb and state from database %>
+            <p>
+                <%= l.user.suburb%>, <%= l.user.state.state_name%>
+            </p>
+            <br>
+            <span>Last Update:</span>
+            <%# using Ruby to bring up listing last update time from database %>
+            <span><%= l.updated_at.strftime("%B %d, %Y") %><span>
+        </section>
+
+    </main>
+<% end %>
+

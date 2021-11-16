@@ -1,48 +1,52 @@
-<h1>Listing Details with Seller Contact Info</h1>
+<h1 class="heading">Listing Details with Seller Contact Info</h1>
 
-<div>
-    <h4><u><%= @listing.listing_title %></u></h4>
+<div class="show-image-box">
+    <%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %><br>
 </div>
 
-<%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %><br>
+<section class="show-form">
+    <div>
+        <h4><u><%= @listing.listing_title %></u></h4>
+    </div>
 
-<div>
-    Console Type: <strong><%= @listing.console.console_type %></strong>
-</div><br>
+    <div>
+        Console Type: <strong><%= @listing.console.console_type %></strong>
+    </div><br>
 
-<div>
-    <%= @listing.description %>
-</div><br>
+    <div>
+        <%= @listing.description %>
+    </div><br>
 
-<div>
-    Price: <strong>$<%= @listing.price %></strong>
-</div><br>
+    <div>
+        Price: <strong>$<%= @listing.price %></strong>
+    </div><br>
 
-<div>
-    Seller Name: <strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></strong>
-</div><br>
+    <div>
+        Seller Name: <strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></strong>
+    </div><br>
 
-<div>
-    Phone Number: <strong>+61 <%= @listing.user.phone_number%></strong>
-</div><br>
+    <div>
+        Phone Number: <strong>+61 <%= @listing.user.phone_number%></strong>
+    </div><br>
 
-<div>
-    Email: <strong><%= @listing.user.email%></strong>
-</div><br>
+    <div>
+        Email: <strong><%= @listing.user.email%></strong>
+    </div><br>
 
-<div>
-    Suburb: <strong><%= @listing.user.suburb%></strong>
-</div><br>
+    <div>
+        Suburb: <strong><%= @listing.user.suburb%></strong>
+    </div><br>
 
-<div>
-    State: <strong><%= @listing.user.state.state_name%></strong>
-</div><br>
+    <div>
+        State: <strong><%= @listing.user.state.state_name%></strong>
+    </div><br>
 
-<div>
-    Last Update: <%= @listing.updated_at.strftime("%B %d, %Y") %>
-</div><br>
+    <div>
+        Last Update: <%= @listing.updated_at.strftime("%B %d, %Y") %>
+    </div><br>
 
-<div>
-    <%= link_to 'Edit', edit_listing_path(@listing) %>
-    <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' } %>
-</div>
+    <div>
+        <%= link_to 'Edit', edit_listing_path(@listing) %>
+        <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' } %>
+    </div>
+</section>
