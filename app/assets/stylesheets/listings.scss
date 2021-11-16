@@ -78,6 +78,14 @@
     border: 2px solid black;
 }
 
+.sign-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 5px auto;
+    align-items: center;
+}
+
 .show-image-box {
     display: flex;
     justify-content: center;
