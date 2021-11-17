@@ -46,7 +46,9 @@
     </div><br>
 
     <div>
-        <%= link_to 'Edit', edit_listing_path(@listing) %>
-        <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' } %>
+        <% if policy(@listing).update? %>
+            <%= link_to 'Edit', edit_listing_path(@listing) %>
+            <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' } %>
+        <% end %>
     </div>
 </section>

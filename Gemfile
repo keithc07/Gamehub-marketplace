@@ -57,4 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Provides authentication to users via devise
 gem 'devise'
+
+# Active storage cloud
 gem "aws-sdk-s3", "~> 1.105"
+
+# Provides authorization with pundit
+gem 'pundit'

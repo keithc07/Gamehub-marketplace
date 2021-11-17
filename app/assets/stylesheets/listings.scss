@@ -122,7 +122,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }   
 
 // adjust text position and alignment
@@ -154,4 +155,8 @@
 section > h1 {
     margin: 5px 0px;
     font-size: 2rem;
+}
+
+body {
+    margin: 0px;
 }

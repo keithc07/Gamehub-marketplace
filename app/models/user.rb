@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :listings
   belongs_to :state
 
+  def admin?; false; end
 end

@@ -24,9 +24,12 @@ class ListingsController < ApplicationController
     end
 
     def edit
+        authorize @listing
     end
 
     def update
+        authorize @listing
+
         if @listing.update(permitted_params)
             redirect_to @listing
         else
@@ -35,8 +38,10 @@ class ListingsController < ApplicationController
     end
 
     def destroy
+        authorize @listing
+
         @listing.destroy
-            redirect_to listings_path, notice: 'Listing was successfully deleted.'
+        redirect_to listings_path, notice: 'Listing was successfully deleted.'
     end
 
 private
