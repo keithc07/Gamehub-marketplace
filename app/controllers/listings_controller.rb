@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: %i[show edit update destroy]
     
     def index
-        @listings = Listing.all
+        @listings = Listing.includes(:console, :user, user: [:state]).all
     end
 
 # Shows only 1 created listing of selling a second-hand game
