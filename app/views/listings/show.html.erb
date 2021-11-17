@@ -47,7 +47,7 @@
 
     <div>
         <% if policy(@listing).update? %>
-            <%= button_to 'Edit', edit_listing_path(@listing), form_class: "edit-delete" %>
+            <%= button_to 'Edit', edit_listing_path(@listing), method: :get, form_class: "edit-delete" %>
             <%= button_to 'Delete', @listing, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' }, form_class: "edit-delete"%>
         <% end %>
     </div>
