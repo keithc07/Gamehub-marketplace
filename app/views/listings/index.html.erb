@@ -40,7 +40,14 @@
             <br>
             <span>Last Update:</span>
             <%# using Ruby to bring up listing last update time from database %>
-            <span><%= l.updated_at.strftime("%B %d, %Y") %><span>
+            <span><%= l.updated_at.strftime("%B %d, %Y") %></span><br>
+            <%# Only the user who create the listing can see the  %>
+            <div>
+                <% if policy(l).update? %>
+                    <%= button_to 'Edit', edit_listing_path(l), form_class: "edit-delete" %>
+                    <%= button_to 'Delete', l, method: :delete, data: { confirm: 'Do you confirm to delete the listing?' }, form_class: "edit-delete"%>
+                <% end %>
+            </div>
         </section>
 
     </main>

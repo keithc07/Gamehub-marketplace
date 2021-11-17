@@ -151,6 +151,10 @@
     color: #FF0000;
 }
 
+.edit-delete {
+    display: inline;
+}
+
 // tweak the margin and font-size of the text in the partial _heading.html.erb
 section > h1 {
     margin: 5px 0px;
