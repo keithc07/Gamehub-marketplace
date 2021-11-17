@@ -1,6 +1,6 @@
 class ListingPolicy < ApplicationPolicy
     def edit?
-            user.admin? || user.id == record&.user_id
+        user.admin? || user.id == record&.user_id
     end
 
     def update?
