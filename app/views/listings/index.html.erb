@@ -31,11 +31,11 @@
             </p>
             <%# using Ruby to bring up user first and last name from database %>
             <p>
-                <%= l.user.first_name%> <%= l.user.last_name%>
+                <%= l.user.first_name.capitalize%> <%= l.user.last_name.capitalize%>
             </p>
             <%# using Ruby to bring up user suburb and state from database %>
             <p>
-                <%= l.user.suburb%>, <%= l.user.state.state_name%>
+                <%= l.user.suburb.capitalize%>, <%= l.user.state.state_name%>
             </p>
             <br>
             <span>Last Update:</span>

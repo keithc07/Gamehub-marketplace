@@ -22,7 +22,7 @@
     </div><br>
 
     <div>
-        Seller Name: <strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></strong>
+        Seller Name: <strong><%= @listing.user.first_name.capitalize%> <%= @listing.user.last_name.capitalize%></strong>
     </div><br>
 
     <div>
@@ -34,7 +34,7 @@
     </div><br>
 
     <div>
-        Suburb: <strong><%= @listing.user.suburb%></strong>
+        Suburb: <strong><%= @listing.user.suburb.capitalize%></strong>
     </div><br>
 
     <div>
