@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: %i[show edit update destroy]
     
     # Shows all the created listing in the index page
+    # Minimize database calls on listing model
     def index
         @listings = Listing.includes(:console, :user, user: [:state]).all
     end
