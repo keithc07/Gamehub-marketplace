@@ -1,4 +1,6 @@
+<%# call the instance variable @listing from either new.html.erb or edit.html.erb %>
 <%= form_with model: listing do |form| %>
+    <%# If there is any error, error messages are show for each error %>
     <% if listing.errors.any? %>
         <div>
             <h2><%= pluralize(listing.errors.count, "error") %> occured. Please follow the requirements below:</h2>
@@ -11,31 +13,37 @@
     <% end %>
 
     <section class="new-form">
+        <%# Using form to display listing title input field %>
         <div>
             <%= form.label :listing_title %>:
             <%= form.text_field :listing_title %>
         </div><br>
 
+        <%# Using collection select to select a console type%>
         <div>
             <%= form.label :console_id %>:
             <%= form.collection_select :console_id, Console.all, :id, :console_type %>
         </div><br>
 
+        <%# Using form to display description input field %>
         <div>
             <%= form.label :description %>:<br>
             <%= form.text_area :description, size: "70x10" %>
         </div><br>
 
+        <%# Using form to display price input field %>
         <div>
             <%= form.label :price %>: $
             <%= form.number_field :price, min: 0, max: 1000 %>
         </div><br>
 
+        <%# Provide a file upload button for picture upload%>
         <div>
             <%= form.label :picture %>:
             <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
         </div><br>
 
+        <%# submit button %>
         <div> 
             <%= form.submit %>
         </div>

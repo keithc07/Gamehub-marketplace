@@ -1,50 +1,64 @@
+<%# Heading of the show page %>
 <h1 class="heading">Listing Details with Seller Contact Info</h1>
 
+<%# Picture conatains in a flexbox %>
+<%# Display the picture if there is any %>
 <div class="show-image-box">
     <%= image_tag @listing.picture, class: "image" if @listing.picture.attached? %><br>
 </div>
 
 <section class="show-form">
+    <%# Display listing title %>
     <div>
         <h4><u><%= @listing.listing_title %></u></h4>
     </div>
 
+    <%# Display listing console type %>
     <div>
         Console Type: <strong><%= @listing.console.console_type %></strong>
     </div><br>
 
+    <%# Display listing description %>
     <div>
         <%= @listing.description %>
     </div><br>
 
+    <%# Display listing price %>
     <div>
         Price: <strong>$<%= @listing.price %></strong>
     </div><br>
 
+    <%# Display listing creator's first and last name %>
     <div>
         Seller Name: <strong><%= @listing.user.first_name.capitalize%> <%= @listing.user.last_name.capitalize%></strong>
     </div><br>
 
+    <%# Display listing creator's phone number %>
     <div>
         Phone Number: <strong>+61 <%= @listing.user.phone_number%></strong>
     </div><br>
 
+    <%# Display listing creator's email%>
     <div>
         Email: <strong><%= @listing.user.email%></strong>
     </div><br>
 
+    <%# Display listing creator's suburb %>
     <div>
         Suburb: <strong><%= @listing.user.suburb.capitalize%></strong>
     </div><br>
 
+    <%# Display listing creator's state %>
     <div>
         State: <strong><%= @listing.user.state.state_name%></strong>
     </div><br>
 
+    <%# Display listing last update date%>
     <div>
         Last Update: <%= @listing.updated_at.strftime("%B %d, %Y") %>
     </div><br>
 
+    <%# Authorize only the listing creator to edit or delete the listing %>
     <div>
         <% if policy(@listing).update? %>
             <%= button_to 'Edit', edit_listing_path(@listing), method: :get, form_class: "edit-delete" %>
