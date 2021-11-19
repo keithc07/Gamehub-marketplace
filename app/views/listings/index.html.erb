@@ -1,14 +1,17 @@
 <%# Ruby iterators returning the specific elements of seller listings %>
 
-<%= form_with(method:'get', url: listings_path, scope: :search, local: true) do |f| %>
-    <%=f.label :listing_title%>
-    <%f.text_field :listing_title %>
+<%# Display the search function that allow users to input text or select console and search%>
+<div class="search-box">
+    <%= form_with(method:'get', url: listings_path, scope: :search, local: true) do |f| %>
+        <%=f.label :listing_title%>:
+        <%=f.text_field :listing_title %>
 
-    <%=f.label :console_id%>
-    <%=f.select :console_id, @consoles.map {|m| [m.console_type, m.id]} %>
+        <%=f.label :console_id%>:
+        <%=f.select :console_id, @consoles.map {|c| [c.console_type, c.id]} %>
 
-    <%= f.submit "Search" %>
-<% end %>
+        <%= f.submit "Search" %>
+    <% end %>
+</div>
 
 <% @listings.each do |l| %>
     <%# flexbox to manage the alignment and position of the inner flexbox%>
