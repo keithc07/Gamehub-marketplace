@@ -8,4 +8,10 @@ class Listing < ApplicationRecord
   validates :listing_title, length: { in: 10..100, message: "Listing title should be within 10 to 100 characters"}, presence: true
   validates :description, length: { in: 50..5000, message: "Description should be within 100 to 5000 characters" }, presence: true
   validates :price, :picture, presence: true
+
+  scope :search_by_listing_title, -> (listing_title) {where('title ILIKE ?', "%#{listing_title}%")}
+  scope :filter_by_console, -> (id) {where(console_id: id)}
+
+  
 end
+

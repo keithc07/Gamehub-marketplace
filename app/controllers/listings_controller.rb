@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
     # Minimize database calls on listing model
     def index
         @listings = Listing.includes(:console, :user, user: [:state]).all
+        @consoles = Console.all
     end
 
     # Shows only 1 created listing in the show page

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 State.create( id: 1, state_name: 'NSW')
 State.create( id: 2, state_name: 'QLD')
 State.create( id: 3, state_name: 'SA')
