@@ -23,7 +23,8 @@
 
 // flexbox to adjust content position and alignment
 .index-inner-box1 {
-    display: flex
+    display: flex;
+    margin: auto;
 }
 
 // flexbox to adjust content position and alignment
@@ -184,4 +185,84 @@ section > h1 {
 
 body {
     margin: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    .search-box {
+        font-size: 15px;
+        width: 70%;
+    }
+    .index-outer-box {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .index-inner-box2 {
+        width: 70%;
+        margin: 3px;
+    }
+
+    .index-inner-box3 {
+        width: 15%;
+    }
+    .image {
+        width: 150px;
+        height: 220px;
+    }
+}
+
+
+@media screen and (max-width: 660px) {
+    .search-box {
+        font-size: 12px;
+        width: 33%;
+    }
+    .index-outer-box {
+        flex-direction: column;
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .index-inner-box2 {
+        width: auto;
+        margin: 3px;
+    }
+
+    .index-inner-box3 {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .index-inner-box3 > p {
+        margin: 10px 10px;
+    }
+
+    .index-inner-box3 > span {
+        position: relative;
+        top: 10px;
+    }
+
+    .image {
+        width: 150px;
+        height: 220px;
+    }
+
+    .navbar {
+        width: 90%;
+    }  
+    
+    .sign-form {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .search-box {
+        font-size: 10px;
+        width: 40%;
+    }
+    .index-outer-box {
+        width: 97%;
+    }
+    
 }
