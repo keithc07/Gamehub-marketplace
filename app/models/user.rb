@@ -11,7 +11,13 @@ class User < ApplicationRecord
 
   # database relationships
   has_many :listings
-  belongs_to :state
+  has_one :address
+  accepts_nested_attributes_for :address
+
+  def with_address
+      build_address if address.nil?
+      self
+  end
 
   # gem "Pundit" logic 
   def admin?; false; end

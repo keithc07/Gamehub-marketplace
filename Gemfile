@@ -63,3 +63,6 @@ gem "aws-sdk-s3", "~> 1.105"
 
 # Provides authorization with pundit
 gem 'pundit'
+
+# allow nested attribute for a model
+gem 'nested_form'
