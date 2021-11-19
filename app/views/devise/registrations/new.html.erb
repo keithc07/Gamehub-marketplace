@@ -63,12 +63,11 @@
     <div class="feild">
       <%= f.label :state_id %>:<br />
       <%= f.collection_select :state_id, State.all, :id, :state_name %>
-    </div>
+    </div><br>
     
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>
   <% end %>
   
-  <%= render "devise/shared/links" %>
 </div>

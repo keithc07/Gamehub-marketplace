@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :unit_address, :postal_code, presence: true
 
   # database relationships
-  has_many :listings
+  has_many :listings, dependent: :destroy
   belongs_to :state
 
   # gem "Pundit" logic 

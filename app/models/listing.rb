@@ -2,7 +2,7 @@ class Listing < ApplicationRecord
   # database relationships
   belongs_to :user
   belongs_to :console
-  has_one_attached :picture
+  has_one_attached :picture, dependent: :destroy
 
   # validates the attributes with different requirements
   validates :listing_title, length: { in: 10..100, message: "should be within 10 to 100 characters"}, presence: true

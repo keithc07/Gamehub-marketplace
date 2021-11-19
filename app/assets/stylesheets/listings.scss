@@ -83,10 +83,14 @@
 
 .sign-form {
     display: flex;
-    width: 100%;
+    width: 25%;
     flex-direction: column;
     margin: 5px auto;
     align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+    padding: 10px;
 }
 
 .show-image-box {
