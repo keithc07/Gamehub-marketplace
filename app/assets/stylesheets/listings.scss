@@ -250,7 +250,7 @@ body {
     .navbar {
         width: 90%;
     }  
-    
+
     .sign-form {
         width: 60%;
     }
@@ -259,10 +259,16 @@ body {
 @media screen and (max-width: 450px) {
     .search-box {
         font-size: 10px;
-        width: 40%;
+        width: 60%;
     }
     .index-outer-box {
         width: 97%;
     }
     
+}
+
+@media screen and (max-width: 350px) {
+    .index-inner-box3 {
+        font-size: 0.8rem;
+    }
 }
