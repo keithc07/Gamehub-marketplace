@@ -64,6 +64,7 @@
     margin: auto;
 }
 
+// flexbox to adjust content position and alignment with css style
 .new-form {
     display: flex;
     width: 40%;
@@ -75,6 +76,7 @@
     padding: 10px;
 }
 
+// flexbox to adjust content position and alignment with css style
 .show-form {
     display: flex;
     width: 50%;
@@ -86,6 +88,7 @@
     padding: 10px;
 }
 
+// flexbox to adjust content position and alignment with css style
 .sign-form {
     display: flex;
     width: 25%;
@@ -98,6 +101,7 @@
     padding: 10px;
 }
 
+// flexbox to adjust content position and alignment
 .show-image-box {
     display: flex;
     justify-content: center;
@@ -163,10 +167,12 @@
     color: #FF0000;
 }
 
+// adjust text position and alignment
 .edit-delete {
     display: inline;
 }
 
+// adjust search box position and alignment with css style
 .search-box {
     display: flex;
     justify-content: center;
@@ -187,10 +193,12 @@ section > h1 {
     font-size: 2rem;
 }
 
+// adjust content position and alignment
 body {
     margin: 0px;
 }
 
+/* responsive design */
 @media screen and (max-width: 1200px) {
     .search-box {
         font-size: 15px;
@@ -218,7 +226,7 @@ body {
     }
 }
 
-
+/* responsive design */
 @media screen and (max-width: 660px) {
     .search-box {
         font-size: 12px;
@@ -273,6 +281,7 @@ body {
     }
 }
 
+/* responsive design */
 @media screen and (max-width: 450px) {
     .search-box {
         font-size: 10px;
@@ -284,6 +293,7 @@ body {
     
 }
 
+/* responsive design */
 @media screen and (max-width: 350px) {
     .index-inner-box3 {
         font-size: 0.8rem;

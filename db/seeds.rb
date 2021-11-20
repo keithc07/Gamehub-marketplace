@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Add state instance to the database
 states = ["NSW", "QLD", "SA", "TAS", "VIC", "WA"]
 
 if State.count == 0
@@ -14,6 +15,7 @@ if State.count == 0
     end
 end
 
+# Add console instance to the database
 consoles = ["PS4/PS5", "XboxOne", "Nintendo Switch", "PC", "Others"]
 
 if Console.count == 0
