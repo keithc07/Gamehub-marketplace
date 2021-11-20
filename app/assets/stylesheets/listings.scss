@@ -69,6 +69,10 @@
     width: 40%;
     flex-direction: column;
     margin: 5px auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+    padding: 10px;
 }
 
 .show-form {
@@ -209,6 +213,9 @@ body {
         width: 150px;
         height: 220px;
     }
+    .new-form {
+        width: 60%;
+    }
 }
 
 
@@ -253,6 +260,16 @@ body {
 
     .sign-form {
         width: 60%;
+    }
+    
+    .new-form {
+        width: 100%;
+        justify-content: flex-end;
+        margin: auto 5px;
+    }
+
+    .show-form {
+        width: 90%;
     }
 }
 
