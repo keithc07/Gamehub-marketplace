@@ -49,7 +49,7 @@
             </p>
             <%# using Ruby to bring up user suburb and state from database %>
             <p>
-                <%= l.user.suburb.capitalize%>, <%= l.user.state.state_name%>
+                <%= l.user.address.suburb.capitalize%>, <%= l.user.address.state.state_name%>
             </p>
             <br>
             <span>Last Update:</span>

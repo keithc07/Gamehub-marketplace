@@ -2,7 +2,7 @@
 <h2 class="heading">Sign up</h2>
 
 <div class="sign-form">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= nested_form_for([resource_name, resource.with_address], url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <%# added first name field to devise %>
@@ -41,30 +41,35 @@
       <%= f.telephone_field :phone_number, autofocus: true %>
     </div>
 
-    <%# added unit address field to devise %>
-    <div class="feild">
-      <%= f.label :unit_address %>:<br />
-      <%= f.text_field :unit_address, autofocus: true %>
-    </div>
+    <%# form for nested attributes %>
+    <%= f.fields_for :address do |a| %>
 
-    <%# added suburb field to devise %>
-    <div class="feild">
-      <%= f.label :suburb %>:<br />
-      <%= f.text_field :suburb, autofocus: true %>
-    </div>
+      <%# added unit address field to devise %>
+      <div class="feild">
+        <%= a.label :unit_address %>:<br />
+        <%= a.text_field :unit_address, autofocus: true %>
+      </div>
 
-    <%# added postal code field to devise %>
-    <div class="feild">
-      <%= f.label :postal_code %>:<br />
-      <%= f.number_field :postal_code, autofocus: true, max: 9999 %>
-    </div>
+      <%# added suburb field to devise %>
+      <div class="feild">
+        <%= a.label :suburb %>:<br />
+        <%= a.text_field :suburb, autofocus: true %>
+      </div>
 
-    <%# added state field to devise %>
-    <div class="feild">
-      <%= f.label :state_id %>:<br />
-      <%= f.collection_select :state_id, State.all, :id, :state_name %>
-    </div><br>
+      <%# added postal code field to devise %>
+      <div class="feild">
+        <%= a.label :postal_code %>:<br />
+        <%= a.number_field :postal_code, autofocus: true, max: 9999 %>
+      </div>
+
+      <%# added state field to devise %>
+      <div class="feild">
+        <%= a.label :state_id %>:<br />
+        <%= a.collection_select :state_id, State.all, :id, :state_name %>
+      </div><br>
     
+    <% end %>
+
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>

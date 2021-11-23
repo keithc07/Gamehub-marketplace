@@ -42,12 +42,12 @@
 
     <%# Display listing creator's suburb %>
     <div>
-        Suburb: <strong><%= @listing.user.suburb.capitalize%></strong>
+        Suburb: <strong><%= @listing.user.address.suburb.capitalize%></strong>
     </div><br>
 
     <%# Display listing creator's state %>
     <div>
-        State: <strong><%= @listing.user.state.state_name%></strong>
+        State: <strong><%= @listing.user.address.state.state_name%></strong>
     </div><br>
 
     <%# Display listing last update date%>

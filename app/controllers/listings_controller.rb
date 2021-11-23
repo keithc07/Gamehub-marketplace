@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
     # Minimize database calls on listing model
     # @consoles is for search function that pass the instance variable to index view
     def index
-        @listings = Listing.search(params[:search]).includes(:console, :user, user: [:state])
+        @listings = Listing.search(params[:search]).includes(:console, :user, picture_attachment: :blob, user: :address, user: [address:[:state]])
         @consoles = Console.all
     end
 
